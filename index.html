@@ -59,7 +59,61 @@
         <header><h2>Formulaire de contact</h2></header>
       </section>
       <section class="contact">
-        <p class="welcome">Vous souhaitez nous envoyer des mots doux ?</p>
+        <div class="form-container">
+          <p class="welcome">Vous souhaitez nous envoyer des mots doux ?</p>
+          <form class="form">
+            <div class="form-group">
+              <label for="subject">Sujet :</label>
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="Sujet"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="name">Votre nom :</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Votre nom"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Votre email :</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Votre email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Votre message :</label>
+              <textarea id="message" name="message" rows="5" cols="33">
+J'adore ce que vous faites...</textarea
+              >
+            </div>
+          </form>
+        </div>
+        <div class="preview-container">
+          <p class="subject preview-title">
+            Sujet : <span id="subject-preview" class="output"></span>
+          </p>
+          <p class="sender preview-title">
+            De la part de :
+            <span id="name-preview" class="output"></span>
+            <span id="email-preview" class="output"></span>
+          </p>
+          <p class="message preview-title">
+            Message : <span id="message-preview"></span>
+          </p>
+          <div class="message-preview"></div>
+        </div>
       </section>
     </template>
 
