@@ -283,6 +283,10 @@ article footer .comment .message-title {
   display: none;
 }
 
+.message-preview {
+  white-space: pre-line;
+}
+
 /* LOADER  */
 .loader,
 .loader:before,

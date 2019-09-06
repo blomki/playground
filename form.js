@@ -1,10 +1,9 @@
 const page = document.querySelector(".layout-content");
+let textArea;
 let userInputs = [];
 let userOutputs = [];
 
 const updateInfo = (value, index) => {
-  console.log(value, index);
-  // let output = event.target.value;
   userOutputs[index].textContent = value;
   if (userOutputs[2].textContent.length > 0) {
     userOutputs[2].setAttribute("class", "email-placeholder");
@@ -18,16 +17,34 @@ const initForm = () => {
   page.innerHTML = "";
   page.appendChild(clone);
   const form = document.querySelector(".form");
-  console.log(form.clientHeight);
   const preview = document.querySelector(".preview-container");
+  const messagePreview = document.querySelector(".message-preview");
   preview.style.height = `${form.clientHeight}px`;
-
+  textArea = document.querySelector("#message");
+  textArea.addEventListener("focus", () => {
+    checkMessage();
+  });
+  textArea.addEventListener("blur", () => {
+    checkMessage();
+  });
+  textArea.addEventListener("keyup", () => {
+    messagePreview.textContent = event.target.value;
+  });
   userOutputs = Array.from(document.querySelectorAll(".output"));
   userInputs = Array.from(document.querySelectorAll("input"));
-  console.log(userInputs, userOutputs);
   userInputs.map((input, index) => {
-    input.addEventListener("keyup", updateInfo(event.target.value, index));
+    input.addEventListener("keyup", () =>
+      updateInfo(event.target.value, index)
+    );
   });
+};
+
+const checkMessage = () => {
+  if (textArea.value.length === 0) {
+    textArea.value = "J'adore ce que vous faites...";
+  } else if (textArea.value === "J'adore ce que vous faites...") {
+    textArea.value = "";
+  }
 };
 
 export { initForm };
