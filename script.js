@@ -4,21 +4,33 @@ import { initTodos } from "./todos.js";
 import { initForm } from "./form.js";
 import { initContacts } from "./contacts.js";
 
-window.addEventListener("load", initPosts(1));
+const pageTemplates = [
+  { selector: "#display-posts", action: initPosts },
+  { selector: "#display-todos", action: initTodos },
+  { selector: "#display-form", action: initForm },
+  { selector: "#display-contacts", action: initContacts }
+];
+
+pageTemplates.map(elt => {
+  document.querySelector(elt.selector).addEventListener("click", elt.action);
+});
+
+window.addEventListener("load", initPosts());
+
 const page = document.querySelector(".layout-content");
 
 const commentsButtons = Array.from(
   document.querySelectorAll(".get-comments-btn")
 );
 
-const todosButton = document.querySelector("#displayTodos");
-todosButton.addEventListener("click", event => initTodos());
+// const todosButton = document.querySelector("#display-todos");
+// todosButton.addEventListener("click", event => initTodos());
 
-const formButton = document.querySelector("#displayForm");
-formButton.addEventListener("click", event => initForm());
+// const formButton = document.querySelector("#display-form");
+// formButton.addEventListener("click", event => initForm());
 
-const contactsButton = document.querySelector("#displayContacts");
-contactsButton.addEventListener("click", event => initContacts());
+// const contactsButton = document.querySelector("#display-contacts");
+// contactsButton.addEventListener("click", event => initContacts());
 
 commentsButtons.map((button, index) => {
   button.parentNode.setAttribute("id", `comments-container-${index + 1}`);
@@ -28,6 +40,8 @@ commentsButtons.map((button, index) => {
   });
 });
 
-const clearPage = () => {
-  
+const clearPage = () => {};
+
+function init(action) {
+  return action;
 }

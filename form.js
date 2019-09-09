@@ -11,6 +11,7 @@ const updateInfo = (value, index) => {
 };
 
 const initForm = () => {
+  console.log("on passe dans initForm");
   const template = document.querySelector("#form-template");
   const clone = document.importNode(template.content, true);
   page.setAttribute("id", "form");

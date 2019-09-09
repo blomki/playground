@@ -1,6 +1,7 @@
 const todos = [];
 
 const initTodos = () => {
+  console.log("on passe dans initTodos");
   const template = document.querySelector("#todos-template");
   const clone = template.content.cloneNode(true);
   const page = document.querySelector(".layout-content");
@@ -10,7 +11,6 @@ const initTodos = () => {
   const userInput = document.querySelector(".todo-input");
   userInput.addEventListener("keyup", event => {
     if (event.keyCode === 13) {
-      console.log("coucou");
       addTodo(userInput.value);
     }
   });

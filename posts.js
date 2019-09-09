@@ -1,6 +1,7 @@
 import { getComments } from "./comments.js";
 
-const initPosts = () => {
+const initPosts = (id = 1) => {
+  console.log("on passe dans initPosts");
   const page = document.querySelector(".layout-content");
   const template = document.querySelector("#posts-template");
   const clone = document.importNode(template.content, true);
@@ -9,7 +10,7 @@ const initPosts = () => {
   page.appendChild(clone);
 
   const postButtons = Array.from(document.querySelectorAll(".get-posts-btn"));
-  const postsButton = document.querySelector("#displayPosts");
+  const postsButton = document.querySelector("#display-posts");
   postsButton.addEventListener("click", event => initPosts());
   postButtons.map((button, index) => {
     button.setAttribute("id", `display-post-${index + 1}`);

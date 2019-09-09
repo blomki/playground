@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script type="module" src="./app-card.js"></script>
     <title>Exercices Vanilla</title>
     <style>
       @import url("https://fonts.googleapis.com/css?family=Cabin|Roboto&display=swap");
@@ -18,14 +19,14 @@
           <h2>Une <i>singlepage app</i> de démonstration</h2>
         </div>
         <nav class="main-navigation">
-          <button class="main-btn" id="displayPosts">Articles</button>
-          <button class="main-btn" id="displayTodos">Todolist</button>
-          <button class="main-btn" id="displayForm">Formulaire</button>
-          <button class="main-btn" id="displayContacts">Contacts</button>
+          <button class="main-btn" id="display-posts">Articles</button>
+          <button class="main-btn" id="display-todos">Todolist</button>
+          <button class="main-btn" id="display-form">Formulaire</button>
+          <button class="main-btn" id="display-contacts">Contacts</button>
         </nav>
       </header>
     </section>
-    <section class="layout-content"></section>
+    <section class="layout-content">Chargement...</section>
 
     <template id="posts-template">
       <aside>
@@ -118,7 +119,7 @@ J'adore ce que vous faites...</textarea
       </section>
     </template>
 
-    <template id="cards-template">
+    <template id="contacts-template">
       <section class="layout-header">
         <header>
           <h2>Contacts</h2>
@@ -127,6 +128,12 @@ J'adore ce que vous faites...</textarea
       <section class="contacts"></section>
     </template>
 
-    <script src="/script.js" type="module"></script>
+    <app-card
+      alt="Picture of a cat"
+      src="https://placekitten.com/200/100"
+    ></app-card>
+
+    <script type="module" src="/script.js"></script>
+    <script type="module" src="modules.js"></script>
   </body>
 </html>
