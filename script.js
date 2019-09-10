@@ -3,12 +3,14 @@ import { getComments } from "./comments.js";
 import { initTodos } from "./todos.js";
 import { initForm } from "./form.js";
 import { initContacts } from "./contacts.js";
+import { initSvg } from "./svg.js";
 
 const pageTemplates = [
   { selector: "#display-posts", action: initPosts },
   { selector: "#display-todos", action: initTodos },
   { selector: "#display-form", action: initForm },
-  { selector: "#display-contacts", action: initContacts }
+  { selector: "#display-contacts", action: initContacts },
+  { selector: "#display-svg", action: initSvg }
 ];
 
 pageTemplates.map(elt => {
