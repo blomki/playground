@@ -4,13 +4,15 @@ import { initTodos } from "./todos.js";
 import { initForm } from "./form.js";
 import { initContacts } from "./contacts.js";
 import { initSvg } from "./svg.js";
+import { initPromises } from "./promises.js";
 
 const pageTemplates = [
   { selector: "#display-posts", action: initPosts },
   { selector: "#display-todos", action: initTodos },
   { selector: "#display-form", action: initForm },
   { selector: "#display-contacts", action: initContacts },
-  { selector: "#display-svg", action: initSvg }
+  { selector: "#display-svg", action: initSvg },
+  { selector: "#display-promises", action: initPromises }
 ];
 
 pageTemplates.map(elt => {

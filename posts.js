@@ -25,6 +25,7 @@ const getPosts = id => {
   let postPlaceHolder = document.querySelector(`.layout-article`);
   postPlaceHolder.innerHTML = "<p>Chargement du contenu</p>";
   fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    .then(handleErrors)
     .then(response => response.json())
     .then(json => {
       postPlaceHolder.innerHTML = "";
@@ -63,7 +64,15 @@ const getPosts = id => {
       footer.appendChild(disclaimer);
       footer.appendChild(button);
       postPlaceHolder.appendChild(footer);
-    });
+    })
+    .catch(error => console.log(error));
+};
+
+const handleErrors = response => {
+  if (!response.ok) {
+    throw Error(response.status);
+  }
+  return response;
 };
 
 export { initPosts, getPosts };
