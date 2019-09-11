@@ -18,11 +18,21 @@
           <h2>Une <i>singlepage app</i> de démonstration</h2>
         </div>
         <nav class="main-navigation">
-          <button class="main-btn" id="display-posts">Articles</button>
-          <button class="main-btn" id="display-todos">Todolist</button>
-          <button class="main-btn" id="display-form">Formulaire</button>
-          <button class="main-btn" id="display-contacts">Contacts</button>
-          <button class="main-btn" id="display-svg">SVG</button>
+          <div class="main-btn" id="display-posts">
+            <span><img class="picto" src="./articles.svg"/></span>Articles
+          </div>
+          <div class="main-btn" id="display-todos">
+            <span><img class="picto" src="./tasks.svg"/></span>Todolist
+          </div>
+          <div class="main-btn" id="display-form">
+            <span><img class="picto" src="./contact.svg"/></span>Formulaire
+          </div>
+          <div class="main-btn" id="display-contacts">
+            <span><img class="picto" src="./card.svg"/></span>Contacts
+          </div>
+          <div class="main-btn" id="display-svg">
+            <span><img class="picto" src="./image.svg"/></span>SVG
+          </div>
         </nav>
       </header>
     </section>
@@ -127,6 +137,26 @@ J'adore ce que vous faites...</textarea
       </section>
       <section class="contacts"></section>
     </template>
+
+    <template id="svg-template">
+      <section class="layout-header">
+        <header>
+          <h2>Svg</h2>
+        </header>
+      </section>
+      <section class="svg"></section>
+    </template>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="blur">
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="3,3"
+          ></feGaussianBlur>
+        </filter>
+      </defs>
+    </svg>
 
     <script type="module" src="/script.js"></script>
     <script type="module" src="modules.js"></script>

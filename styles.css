@@ -61,19 +61,27 @@ h2 {
   flex-direction: row;
   justify-content: flex-end;
 }
-button {
+button,
+.main-btn {
   padding: 10px;
   border-radius: 5px;
   border: 0;
   background-color: rgb(169, 197, 197);
   margin-right: 5px;
   transition: background-color 0.5s;
+  text-align: center;
 }
 
-button:hover {
+button,
+.main-btn:hover {
   transition: background-color 0.5s;
   background-color: rgb(191, 222, 243);
   cursor: pointer;
+}
+.picto {
+  width: 50px;
+  display: block;
+  margin: 0 auto;
 }
 
 aside nav .get-posts-btn {
@@ -401,4 +409,9 @@ article footer .comment .message-title {
 .card .phone {
   padding-bottom: 5px;
   border-bottom: 1px dotted rgb(67, 77, 92);
+}
+
+/* SVG */
+.svgblur {
+  filter: url(#blur);
 }
