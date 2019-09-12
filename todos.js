@@ -1,6 +1,8 @@
 const todos = [];
+import { cleanCSS } from "./script.js";
 
 const initTodos = () => {
+  cleanCSS(["lose-bg", "win-bg"]);
   console.log("on passe dans initTodos");
   const template = document.querySelector("#todos-template");
   const clone = template.content.cloneNode(true);

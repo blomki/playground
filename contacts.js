@@ -1,7 +1,9 @@
 const users = [];
 const userList = document.querySelector(".contacts");
+import { cleanCSS } from "./script.js";
 
 const initContacts = () => {
+  cleanCSS(["lose-bg", "win-bg"]);
   console.log("InitContacts");
   const page = document.querySelector(".layout-content");
   const template = document.querySelector("#contacts-template");

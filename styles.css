@@ -415,3 +415,54 @@ article footer .comment .message-title {
 .svgblur {
   filter: url(#blur);
 }
+
+/* --------------------- PROMISES ----------------------------- */
+
+.game-card {
+  width: 200px;
+  margin: 20px auto;
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(#d8daf8, #f1f3fc);
+  box-shadow: 10px 5px 5px #2c324d;
+  animation: slide-up 0.4s ease;
+}
+
+img .picto-result {
+  display: inline-block;
+  margin: 30px auto;
+  width: 100px;
+  fill: #2c324d;
+}
+
+.game-card.lose {
+  background: linear-gradient(#d8daf8, #f1f3fc);
+  box-shadow: 10px 5px 5px #2c324d;
+}
+
+.game-card.win {
+  background: linear-gradient(#f8edd8, #fcf1f1);
+  box-shadow: 10px 5px 5px #4d2c2c;
+}
+
+.game-card h3 {
+  font-size: 1.3em;
+}
+
+.win h3 {
+  color: #c48a0d;
+}
+
+.lose h3 {
+  color: #3c1d5f;
+}
+
+.lose-bg {
+  background: #9095aa;
+  transition: all 3s ease-out;
+}
+
+.win-bg {
+  background: #c76000;
+  transition: all 3s ease-out;
+}

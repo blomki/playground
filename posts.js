@@ -1,6 +1,8 @@
 import { getComments } from "./comments.js";
+import { cleanCSS } from "./script.js";
 
 const initPosts = (id = 1) => {
+  cleanCSS(["lose-bg", "win-bg"]);
   console.log("on passe dans initPosts");
   const page = document.querySelector(".layout-content");
   const template = document.querySelector("#posts-template");

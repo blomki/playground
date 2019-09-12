@@ -23,8 +23,10 @@ const colorPalette = [
   "#606eff",
   "#4757ff"
 ];
+import { cleanCSS } from "./script.js";
 
 const initSvg = () => {
+  cleanCSS(["lose-bg", "win-bg"]);
   console.log("initSvg");
 
   const clone = document.importNode(template.content, true);

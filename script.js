@@ -5,6 +5,7 @@ import { initForm } from "./form.js";
 import { initContacts } from "./contacts.js";
 import { initSvg } from "./svg.js";
 import { initPromises } from "./promises.js";
+const background = document.querySelector("body");
 
 const pageTemplates = [
   { selector: "#display-posts", action: initPosts },
@@ -14,6 +15,14 @@ const pageTemplates = [
   { selector: "#display-svg", action: initSvg },
   { selector: "#display-promises", action: initPromises }
 ];
+
+const cleanCSS = (currentClasses, element = background) => {
+  currentClasses.map(elt => {
+    if (element.classList.contains(elt)) {
+      element.classList.remove(elt);
+    }
+  });
+};
 
 pageTemplates.map(elt => {
   document.querySelector(elt.selector).addEventListener("click", elt.action);
@@ -26,15 +35,6 @@ const page = document.querySelector(".layout-content");
 const commentsButtons = Array.from(
   document.querySelectorAll(".get-comments-btn")
 );
-
-// const todosButton = document.querySelector("#display-todos");
-// todosButton.addEventListener("click", event => initTodos());
-
-// const formButton = document.querySelector("#display-form");
-// formButton.addEventListener("click", event => initForm());
-
-// const contactsButton = document.querySelector("#display-contacts");
-// contactsButton.addEventListener("click", event => initContacts());
 
 commentsButtons.map((button, index) => {
   button.parentNode.setAttribute("id", `comments-container-${index + 1}`);
@@ -49,3 +49,5 @@ const clearPage = () => {};
 function init(action) {
   return action;
 }
+
+export { cleanCSS };

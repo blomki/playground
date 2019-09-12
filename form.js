@@ -1,7 +1,7 @@
+import { cleanCSS } from "./script.js";
 const page = document.querySelector(".layout-content");
 let textArea;
-let userInputs = [];
-let userOutputs = [];
+let userInputs, userOutputs;
 
 const updateInfo = (value, index) => {
   userOutputs[index].textContent = value;
@@ -11,6 +11,7 @@ const updateInfo = (value, index) => {
 };
 
 const initForm = () => {
+  cleanCSS(["lose-bg", "win-bg"]);
   console.log("on passe dans initForm");
   const template = document.querySelector("#form-template");
   const clone = document.importNode(template.content, true);
