@@ -1,0 +1,17 @@
+{
+  "name": "vanilla",
+  "version": "1.0.0",
+  "description": "javascript playground",
+  "main": "script.js",
+  "repository": "git@github.com:blomki/playground.git",
+  "author": "blomki",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}
